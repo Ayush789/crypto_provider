@@ -1,5 +1,5 @@
-import 'package:crypto_provider/ui/views/home_view/add_coin.dart';
-import 'package:crypto_provider/ui/views/home_view/dashboard.dart';
+import 'package:crypto_provider/ui/views/add_coin.dart';
+import 'package:crypto_provider/ui/views/dashboard.dart';
 import 'package:flutter/material.dart';
 
 class Router {

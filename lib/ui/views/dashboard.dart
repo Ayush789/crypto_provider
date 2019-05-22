@@ -1,8 +1,8 @@
-import 'package:crypto_provider/core/viewmodel/home_model.dart';
+import 'package:crypto_provider/core/viewmodel/dashboard_model.dart';
 import 'package:crypto_provider/ui/widgets/cointile.dart';
 import 'package:flutter/material.dart';
 
-import '../base_view.dart';
+import 'base_view.dart';
 
 class HomeView extends StatelessWidget {
   @override
@@ -65,7 +65,7 @@ class HomeView extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
                                     Text(
-                                      "\$${model.Balance}",
+                                      "\$${model.Balance.toStringAsFixed(2)}",
                                       style: TextStyle(
                                         fontSize: 40.0,
                                         color: Colors.white,

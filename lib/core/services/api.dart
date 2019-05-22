@@ -1,15 +1,17 @@
 import 'dart:convert';
-import 'package:crypto_provider/core/models/coin.dart';
+import 'package:crypto_provider/core/models/crypto_coin.dart';
+import 'package:crypto_provider/core/models/wallet_coin.dart';
 import 'package:http/http.dart';
 
 class API {
   String baseUrl = "https://api.coingecko.com/api/v3";
 
-  Future<WalletCoin> getPrice(String coinId) async {
+  Future<
+      WalletCoin> getPrice(String coinId, double amt) async {
     String url = "$baseUrl/coins/${coinId}?sparkline=true";
     var resp = await get(url);
     var data = jsonDecode(resp.body);
-    return WalletCoin().fromJson(data, 0.1);
+    return WalletCoin().fromJson(data, amt);
   }
 
   Future<List<CryptoCoin>> getAllCoins() async {

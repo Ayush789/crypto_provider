@@ -17,8 +17,10 @@ class WalletCoin {
   WalletCoin fromJson(dynamic data, double amount) {
     return WalletCoin(
       Symbol: data["symbol"] as String,
-      priceHistory:// [1000, 2000, 3000, 4000, 5000, 2300],
-      (data["market_data"]["sparkline_7d"]["price"] as List).map((i) => i as double).toList(),
+      priceHistory: // [1000, 2000, 3000, 4000, 5000, 2300],
+          (data["market_data"]["sparkline_7d"]["price"] as List)
+              .map((i) => i as double)
+              .toList(),
       Id: data["id"] as String,
       Name: data["name"] as String,
       Price: data["market_data"]["current_price"]["usd"] as double,
@@ -34,25 +36,14 @@ class WalletCoin {
   }
 }
 
-class CryptoCoin {
-  String Id, Name, Symbol;
-
-  CryptoCoin({
-    this.Name,
-    this.Id,
-    this.Symbol,
-  });
-
-  CryptoCoin fromJson(dynamic data){
-    return CryptoCoin(
-      Id: data["id"] as String,
-      Name: data["name"] as String,
-      Symbol: data["symbol"] as String,
-    );
-  }
-
-  @override
-  String toString() {
-    return "Id: $Id Name: $Name Symbol: $Symbol\n";
-  }
-}
+WalletCoin democoin = WalletCoin(
+  Id: "bitcoin",
+  Amount: 0.0,
+  ImageUrl:
+      "https://assets.coingecko.com/coins/images/1/thumb/bitcoin.png?1547033579",
+  Name: "Bitcoin",
+  Price: 100.0,
+  PriceChange: 0.2,
+  priceHistory: [100, 200, 300, 200, 500],
+  Symbol: "BTC",
+);

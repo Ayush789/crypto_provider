@@ -1,5 +1,5 @@
-
-import 'package:crypto_provider/core/models/coin.dart';
+import 'package:crypto_provider/core/models/crypto_coin.dart';
+import 'package:crypto_provider/core/models/wallet_coin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sparkline/flutter_sparkline.dart';
 
@@ -15,7 +15,6 @@ class CoinListBox extends StatefulWidget {
 }
 
 class _CoinListBoxState extends State<CoinListBox> {
-
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -50,8 +49,7 @@ class _CoinListBoxState extends State<CoinListBox> {
                     widget.coin.Symbol,
                     style: TextStyle(color: Colors.white, fontSize: 18.0),
                   ),
-                  Text(
-                      "\$${widget.coin.Price.toStringAsFixed(2)}"),
+                  Text("\$${widget.coin.Price.toStringAsFixed(2)}"),
                 ],
               ),
               Column(
